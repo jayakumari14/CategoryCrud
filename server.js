@@ -21,13 +21,18 @@ app.get("/category", async (req, res) => {
 });
 
 app.post("/category", async (req, res) => {
-  const { categoryName, categoryDescription } = req.body;
-  const newCategory = new userModel({
-    categoryName,
-    categoryDescription,
-  });
-  await newCategory.save(); // Save new category to database
-  res.status(201).send(newCategory);
+  try {
+    const { categoryName, categoryDescription } = req.body;
+    const newCategory = new userModel({
+      categoryName,
+      categoryDescription,
+    });
+    await newCategory.save(); // Save new category to database
+    res.status(201).send(newCategory);
+  } catch (error) {
+    console.error("Error adding category:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 const PORT = process.env.PORT || 3000;
