@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost:27017/categoryCrud");
 
-const userSchema = mongoose.Schema({
+const categorySchema = mongoose.Schema({
   categoryName: {
     type: String,
   },
@@ -11,4 +11,4 @@ const userSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model("category", categorySchema);
