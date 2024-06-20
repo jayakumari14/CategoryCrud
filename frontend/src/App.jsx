@@ -1,7 +1,12 @@
 import "./App.css";
-
+// import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+import ViewCategory from "./components/ViewCategory";
 function App() {
-  return <>welcome to reactjs vite </>;
+  return (
+    <>
+      <ViewCategory />
+    </>
+  );
 }
 
 export default App;
