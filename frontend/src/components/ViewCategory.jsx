@@ -16,20 +16,24 @@ const ViewCategory = () => {
   return (
     <>
       <h2 className="text-center mt-5 text-2xl text-sky-800">View Category</h2>
-      <div className="flex justify-center mt-5">
-        <table className="text-center my_table">
-          <tr>
-            <th>Category Name</th>
-            <th>Category Description</th>
-          </tr>
+      <div className="flex justify-center mt-5 ">
+        <table className="text-center rounded-md ">
+          <thead>
+            <tr>
+              <th>Category Name</th>
+              <th>Category Description</th>
+            </tr>
+          </thead>
 
           {category.map((cat) => {
             return (
               <>
-                <tr>
-                  <td>{cat.categoryName}</td>
-                  <td>{cat.categoryDescription}</td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>{cat.categoryName}</td>
+                    <td>{cat.categoryDescription}</td>
+                  </tr>
+                </tbody>
               </>
             );
           })}
