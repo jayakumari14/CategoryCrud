@@ -7,22 +7,22 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <div className=" text-sm text-white p-3">
+      <div className=" text-sm text-slate-800 p-3">
         <Link
           to="/view-category"
-          className="mx-1 bg-slate-400 rounded-md px-4 py-2 hover:bg-sky-500"
+          className="mx-1 bg-slate-300 rounded-md px-4 py-2 hover:bg-sky-500 hover:text-white"
         >
           View Category
         </Link>
         <Link
           to="/add-category"
-          className="  bg-slate-400 rounded-md px-4 py-2 hover:bg-sky-500"
+          className="  bg-slate-300 rounded-md px-4 py-2 hover:bg-sky-500 hover:text-white"
         >
           Add Category
         </Link>
         <Link
           to="/edit-category"
-          className=" mx-1 bg-slate-400 rounded-md px-4 py-2 hover:bg-sky-500"
+          className=" mx-1 bg-slate-300 rounded-md px-4 py-2 hover:bg-sky-500 hover:text-white"
         >
           Edit Category
         </Link>
