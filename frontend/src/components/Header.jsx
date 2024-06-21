@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <div>
-      <nav className="p-3 bg-sky-700 text-black m-2 ">
+      <nav className="p-3 bg-sky-700 text-black  ">
         <ul className="flex justify-between">
           <li className="text-3xl text-white">Category</li>
           <li>
