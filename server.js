@@ -47,10 +47,36 @@ app.use(bodyParser.json());
 //   }
 // });
 
+//-------------------------view category-------------------
 app.get("/api/categories", async (req, res) => {
   try {
     const categories = await userModel.find();
     res.send(categories);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//-------------------------add category-------------------
+app.post("/api/add-categories", async (req, res) => {
+  try {
+    const categories = new userModel(req.body);
+    const saveCategory = await categories.save();
+    res.json(saveCategory);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//-------------------------delete category-------------------
+app.delete("/api/delete-categories/:id", async (req, res) => {
+  try {
+    // const categories = new userModel.findByIdAndDelete(req.body);
+    const deleteCategory = await userModel.findByIdAndDelete(req.params.id);
+    if (!deleteCategory) {
+      return res.status(404).json({ error: "category not found" });
+    }
+    res.json(deleteCategory);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
