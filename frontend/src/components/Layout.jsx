@@ -9,6 +9,7 @@ const Layout = () => {
       <h1 className=" text-center text-4xl text-sky-700">
         Welcome to Category Page!
       </h1>
+
       <Outlet />
 
       <Footer />

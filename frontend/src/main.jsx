@@ -23,9 +23,9 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="add-category" element={<AddCategory />} />
-      <Route path="edit-category" element={<EditCategory />} />
-      <Route path="view-category" element={<ViewCategory />} />
+      <Route path="/add-category" element={<AddCategory />} />
+      <Route path="/edit-category" element={<EditCategory />} />
+      <Route path="/view-category" element={<ViewCategory />} />
     </Route>
   )
 );
