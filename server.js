@@ -58,7 +58,6 @@ app.get("/api/categories", async (req, res) => {
 });
 
 //-------------------------add single category-------------------
-
 app.get("/api/categories/:id", async (req, res) => {
   try {
     const singleCategory = await userModel.findById(req.params.id);
@@ -74,6 +73,20 @@ app.post("/api/add-categories", async (req, res) => {
     const categories = new userModel(req.body);
     const saveCategory = await categories.save();
     res.json(saveCategory);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//-------------------------Update single category-------------------
+app.post("/api/update-categories/:id", async (req, res) => {
+  try {
+    const updateCategory = await userModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    res.send(updateCategory);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
