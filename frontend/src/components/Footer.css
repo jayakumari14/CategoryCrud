@@ -1,0 +1,113 @@
+/* ======- BODY -======*/
+/* body {
+  min-height: 100vh;
+  background-color: #1a1e21;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+header h1 {
+  font-family: Black Ops One;
+}
+
+/* clicked link effect */
+a,
+a:visited {
+  text-decoration: none;
+}
+
+content a,
+content a:visited {
+  text-decoration: none;
+  color: black;
+  font-family: Fruktur;
+  font-size: 24px;
+}
+
+content a p:hover {
+  background-color: yellow;
+}
+
+/* ======- FOOTER -====== */
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem;
+  background-color: #c7d2fe;
+  text-align: center;
+}
+
+/* footer text */
+footer div p {
+  font-family: rubik one;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+footer div p i.red {
+  color: red;
+  size: 24px;
+}
+
+/* footer text effects */
+footer div p span {
+  transition: background-color, color 1500ms ease;
+  background-color: #0ea5e9;
+  color: white;
+}
+
+footer div p span:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Footer Image Links */
+footer a.github {
+  -webkit-transition: color 500ms ease;
+  -moz-transition: color 500ms ease;
+  -o-transition: color 500ms ease;
+  transition: color 500ms ease;
+  font-size: 3em;
+  color: rgb(13, 38, 54);
+  padding: 10px;
+  display: inline-block;
+}
+
+footer a.codepen {
+  -webkit-transition: color 500ms ease;
+  -moz-transition: color 500ms ease;
+  -o-transition: color 500ms ease;
+  transition: color 500ms ease;
+  font-size: 3em;
+  color: black;
+  padding: 10px;
+  display: inline-block;
+}
+
+/* image links hover effects */
+footer a.github:hover {
+  color: darkgray;
+}
+
+footer a.codepen:hover {
+  color: darkgray;
+}
+
+/* Resposive Footer */
+
+@media screen and (max-width: 400px) {
+  footer.pc {
+    display: none;
+  }
+  footer.mobile {
+    display: block;
+  }
+  footer.mobile div p {
+    font-size: 15px;
+  }
+}
