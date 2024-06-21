@@ -74,7 +74,7 @@ footer a.github {
   -moz-transition: color 500ms ease;
   -o-transition: color 500ms ease;
   transition: color 500ms ease;
-  font-size: 3em;
+  font-size: 2em;
   color: rgb(13, 38, 54);
   padding: 10px;
   display: inline-block;
@@ -85,7 +85,7 @@ footer a.codepen {
   -moz-transition: color 500ms ease;
   -o-transition: color 500ms ease;
   transition: color 500ms ease;
-  font-size: 3em;
+  font-size: 2em;
   color: black;
   padding: 10px;
   display: inline-block;

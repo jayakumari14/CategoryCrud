@@ -15,8 +15,7 @@ const Footer = () => {
         <div className="copyright">
           <p>
             Made by
-            <a href="#" target="_blank">
-              {" "}
+            <a href="#">
               <span>&nbsp;JAYA R&nbsp;</span>
             </a>
           </p>
