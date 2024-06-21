@@ -1,13 +1,11 @@
-import ViewCategory from "./ViewCategory";
 import { Outlet } from "react-router-dom";
-import AddCategory from "./AddCategory";
+import Header from "./Header";
 
 const Layout = () => {
   return (
     <>
-      <ViewCategory />
+      <Header />
       <Outlet />
-      <AddCategory />
     </>
   );
 };

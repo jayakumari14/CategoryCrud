@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import AddCategory from "./components/AddCategory";
+import EditCategory from "./components/EditCategory";
+import ViewCategory from "./components/ViewCategory";
+import Layout from "./components/Layout";
 // import App from "./App.jsx";
 import "./index.css";
 import {
@@ -8,7 +12,6 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Layout from "./components/Layout";
 
 // const router = createBrowserRouter([
 //   {
@@ -20,9 +23,9 @@ import Layout from "./components/Layout";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route />
-      <Route />
-      <Route />
+      <Route path="add-category" element={<AddCategory />} />
+      <Route path="edit-category" element={<EditCategory />} />
+      <Route path="view-category" element={<ViewCategory />} />
     </Route>
   )
 );

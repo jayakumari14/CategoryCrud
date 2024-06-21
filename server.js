@@ -9,44 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(bodyParser.json());
 
-// app.get("/api/view-category", async (req, res) => {
-//   // Use query parameters for GET requests
-//   const { categoryName, categoryDescription } = req.query;
-//   console.log("Received query parameters:", {
-//     categoryName,
-//     categoryDescription,
-//   });
-//   try {
-//     const category = await userModel.find({
-//       categoryName: categoryName,
-//       categoryDescription: categoryDescription,
-//     });
-//     res.send(category);
-//   } catch (error) {
-//     console.error("Error fetching category:", error);
-//     res.status(500).send("Error fetching category");
-//   }
-// });
-
-// app.post("/api/add-category", async (req, res) => {
-//   try {
-//     const { categoryName, categoryDescription } = req.query;
-//     console.log("Received query parameters:", {
-//       categoryName,
-//       categoryDescription,
-//     });
-//     const newCategory = new userModel({
-//       categoryName: categoryName,
-//       categoryDescription: categoryDescription,
-//     });
-//     await newCategory.save(); // Save new category to database
-//     res.status(201).send(newCategory);
-//   } catch (error) {
-//     console.error("Error adding category:", error);
-//     res.status(500).send("Internal Server Error");
-//   }
-// });
-
 //-------------------------view category-------------------
 app.get("/api/categories", async (req, res) => {
   try {
@@ -95,7 +57,6 @@ app.post("/api/update-categories/:id", async (req, res) => {
 //-------------------------delete category-------------------
 app.delete("/api/delete-categories/:id", async (req, res) => {
   try {
-    // const categories = new userModel.findByIdAndDelete(req.body);
     const deleteCategory = await userModel.findByIdAndDelete(req.params.id);
     if (!deleteCategory) {
       return res.status(404).json({ error: "category not found" });
