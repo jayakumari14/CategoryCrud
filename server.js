@@ -57,6 +57,17 @@ app.get("/api/categories", async (req, res) => {
   }
 });
 
+//-------------------------add single category-------------------
+
+app.get("/api/categories/:id", async (req, res) => {
+  try {
+    const singleCategory = await userModel.findById(req.params.id);
+    res.send(singleCategory);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 //-------------------------add category-------------------
 app.post("/api/add-categories", async (req, res) => {
   try {
