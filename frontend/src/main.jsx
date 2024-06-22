@@ -4,6 +4,7 @@ import AddCategory from "./components/AddCategory";
 import EditCategory from "./components/EditCategory";
 import ViewCategory from "./components/ViewCategory";
 import Layout from "./components/Layout";
+import ListCategory from "./components/ListCategory";
 // import App from "./App.jsx";
 import "./index.css";
 import {
@@ -25,7 +26,8 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route path="/add-category" element={<AddCategory />} />
       <Route path="/edit-category/:id" element={<EditCategory />} />
-      <Route path="/view-category" element={<ViewCategory />} />
+      <Route path="/category/:id" element={<ViewCategory />} />
+      <Route path="/list-category" element={<ListCategory />} />
     </Route>
   )
 );

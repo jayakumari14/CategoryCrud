@@ -9,7 +9,7 @@ const Layout = () => {
       <Header />
       <div className=" text-sm text-slate-800 p-3">
         <Link
-          to="/view-category"
+          to="/category/:id"
           className="mx-1 bg-slate-300 rounded-md px-4 py-2 hover:bg-sky-500 hover:text-white"
         >
           View Category
@@ -21,10 +21,16 @@ const Layout = () => {
           Add Category
         </Link>
         <Link
-          to="/edit-category"
+          to="/edit-category/:id"
           className=" mx-1 bg-slate-300 rounded-md px-4 py-2 hover:bg-sky-500 hover:text-white"
         >
           Edit Category
+        </Link>
+        <Link
+          to="/list-category"
+          className=" mx-1 bg-slate-300 rounded-md px-4 py-2 hover:bg-sky-500 hover:text-white"
+        >
+          List Category
         </Link>
       </div>
       <Outlet />
