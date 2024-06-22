@@ -2,7 +2,7 @@ table {
   border-collapse: collapse;
 }
 th {
-  background: #cbd5e1;
+  background: #f4f4f5;
 }
 
 th,
@@ -12,5 +12,5 @@ td {
 }
 
 tr:hover {
-  background: #d1d1d1;
+  background: #fafafa;
 }

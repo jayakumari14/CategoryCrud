@@ -16,6 +16,20 @@ const ListCategory = () => {
       .catch((error) => console.log("error in fetching data", error));
   }, []);
 
+  const deleteCategory = async (id) => {
+    try {
+      const res = await axios.delete(
+        `http://localhost:3000/api/delete-categories/${id}`
+      );
+      setCategory((prevCategories) =>
+        prevCategories.filter((category) => category._id !== id)
+      );
+      console.log(res.data);
+    } catch (error) {
+      console.log("Error in deleting category:", error);
+    }
+  };
+
   return (
     <>
       <h2 className="text-center mt-5 text-2xl text-sky-800">List Category</h2>
@@ -35,11 +49,14 @@ const ListCategory = () => {
             return (
               <>
                 <tbody>
-                  <tr>
+                  <tr key={category._id}>
                     <td>{cat.categoryName}</td>
                     <td>{cat.categoryDescription}</td>
                     <td>
-                      <button className="bg-red-400 px-4 py-1 rounded-md text-white">
+                      <button
+                        className="bg-red-400 px-4 py-1 rounded-md text-white"
+                        onClick={() => deleteCategory(cat._id)}
+                      >
                         delete
                       </button>
                     </td>
