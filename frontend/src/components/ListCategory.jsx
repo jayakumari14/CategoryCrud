@@ -9,7 +9,10 @@ const ListCategory = () => {
   useEffect(() => {
     axios
       .get("http://localhost:3000/api/categories")
-      .then((res) => setCategory(res.data))
+      .then((res) => {
+        setCategory(res.data);
+        console.log(res.data);
+      })
       .catch((error) => console.log("error in fetching data", error));
   }, []);
 
@@ -22,6 +25,9 @@ const ListCategory = () => {
             <tr>
               <th>Category Name</th>
               <th>Category Description</th>
+              <th>Actions</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
 
@@ -32,6 +38,21 @@ const ListCategory = () => {
                   <tr>
                     <td>{cat.categoryName}</td>
                     <td>{cat.categoryDescription}</td>
+                    <td>
+                      <button className="bg-red-400 px-4 py-1 rounded-md text-white">
+                        delete
+                      </button>
+                    </td>
+                    <td>
+                      <button className="bg-sky-400 px-4 py-1 rounded-md text-white">
+                        edit
+                      </button>
+                    </td>
+                    <td>
+                      <button className="bg-yellow-400 px-4 py-1 rounded-md text-white">
+                        update
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               </>
