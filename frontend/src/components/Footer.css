@@ -86,7 +86,8 @@ footer a.codepen {
   -o-transition: color 500ms ease;
   transition: color 500ms ease;
   font-size: 2em;
-  color: black;
+  /* color: black; */
+  color: rgb(13, 38, 54);
   padding: 10px;
   display: inline-block;
 }

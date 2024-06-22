@@ -16,7 +16,7 @@ const ViewCategory = () => {
   return (
     <>
       <h2 className="text-center mt-5 text-2xl text-sky-800">View Category</h2>
-      <div className="flex justify-center mt-5 ">
+      <div className="flex justify-center mt-5  ">
         <table className="text-center rounded-md ">
           <thead>
             <tr>

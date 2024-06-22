@@ -1,0 +1,33 @@
+.card-header {
+  color: #333;
+  text-align: left;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+.card-body {
+  width: 50%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.card-footer {
+  text-align: left;
+  padding: 10px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
+}

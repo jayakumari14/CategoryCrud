@@ -11,10 +11,6 @@ td {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background: #efefef;
-}
-
 tr:hover {
   background: #d1d1d1;
 }
