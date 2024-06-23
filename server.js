@@ -19,11 +19,11 @@ app.get("/api/categories", async (req, res) => {
   }
 });
 
-//-------------------------add single category-------------------
-app.get("/api/categories/:id", async (req, res) => {
+//-------------------------view single category-------------------
+app.get("/api/category/:id", async (req, res) => {
   try {
-    const singleCategory = await userModel.findById(req.params.id);
-    res.send(singleCategory);
+    const category = await userModel.findById(req.params.id);
+    res.json(category);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

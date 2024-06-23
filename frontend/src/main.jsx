@@ -26,7 +26,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route path="/add-category" element={<AddCategory />} />
       <Route path="/edit-category/:id" element={<EditCategory />} />
-      <Route path="/category/:id" element={<ViewCategory />} />
+      <Route path="/view-category/:id" element={<ViewCategory />} />
       <Route path="/list-category" element={<ListCategory />} />
     </Route>
   )

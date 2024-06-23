@@ -1,4 +1,4 @@
-// import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./ListCategory.css";
@@ -49,7 +49,7 @@ const ListCategory = () => {
             return (
               <>
                 <tbody>
-                  <tr key={category._id}>
+                  <tr key={cat._id}>
                     <td>{cat.categoryName}</td>
                     <td>{cat.categoryDescription}</td>
                     <td>
@@ -61,9 +61,20 @@ const ListCategory = () => {
                       </button>
                     </td>
                     <td>
-                      <button className="bg-sky-400 px-4 py-1 rounded-md text-white">
+                      <Link
+                        to={`/view-category/${cat._id}`}
+                        className="bg-pink-400 px-4 py-1 rounded-md text-white"
+                      >
+                        View
+                      </Link>
+                    </td>
+                    <td>
+                      <Link
+                        to={`/edit-category/:id`}
+                        className="bg-sky-400 px-4 py-1 rounded-md text-white"
+                      >
                         edit
-                      </button>
+                      </Link>
                     </td>
                     <td>
                       <button className="bg-yellow-400 px-4 py-1 rounded-md text-white">
