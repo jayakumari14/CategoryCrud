@@ -70,7 +70,7 @@ const ListCategory = () => {
                     </td>
                     <td>
                       <Link
-                        to={`/edit-category/:id`}
+                        to={`/edit-category/${cat._id}`}
                         className="bg-sky-400 px-4 py-1 rounded-md text-white"
                       >
                         edit
