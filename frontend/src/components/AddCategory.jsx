@@ -41,6 +41,7 @@ const AddCategory = () => {
               value={categoryDescription}
               onChange={(e) => setDescription(e.target.value)}
             />
+
             <input
               type="submit"
               value="add category"

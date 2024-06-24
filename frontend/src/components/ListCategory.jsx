@@ -76,11 +76,6 @@ const ListCategory = () => {
                         edit
                       </Link>
                     </td>
-                    <td>
-                      <button className="bg-yellow-400 px-4 py-1 rounded-md text-white">
-                        update
-                      </button>
-                    </td>
                   </tr>
                 </tbody>
               </>
