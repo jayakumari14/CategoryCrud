@@ -1,21 +1,41 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./AddCategory.css";
+import { useParams } from "react-router-dom";
 
 const EditCategory = () => {
-  const [category, setCategory] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [categoryDescription, setDescription] = useState("");
+  // const [category, setCategory] = useState([]);
+  const { id } = useParams();
 
-  const formHandler = async () => {
+  useEffect(() => {
+    fetchCategory();
+  }, [id]);
+
+  // const { categoryName, categoryDescription } = category;
+
+  const fetchCategory = async () => {
     try {
-      await axios
-        .post("http://localhost:3000/api/add-categories", {
-          categoryName,
-          categoryDescription,
-        })
-        .then((res) => setCategory(res.data))
-        .catch((error) => console.log("error in fetching data", error));
+      const res = await axios.get(`http://localhost:3000/api/category/` + id);
+      setCategoryName(res.data.categoryName);
+      setDescription(res.data.categoryDescription);
+    } catch (error) {
+      console.log("error in displaying single category");
+    }
+  };
+
+  const formUpdateHandler = async () => {
+    const datas = {
+      categoryName: categoryName,
+      categoryDescription: categoryDescription,
+    };
+    console.log("datas", datas);
+    try {
+      await axios.put(
+        `http://localhost:3000/api/update-categories/` + id,
+        datas
+      );
     } catch (error) {
       console.log("error");
     }
@@ -23,10 +43,10 @@ const EditCategory = () => {
 
   return (
     <>
-      <h2 className="text-center mt-5 text-2xl text-sky-800">Add Category</h2>
+      <h2 className="text-center mt-5 text-2xl text-sky-800">Edit Category</h2>
       <div className="flex justify-center mt-5 ">
         <div className="card-body bg-slate-200 p-5 ">
-          <form onSubmit={formHandler}>
+          <form onSubmit={formUpdateHandler}>
             <label> Category Name: </label>
             <input
               type="text"
@@ -43,7 +63,7 @@ const EditCategory = () => {
             />
             <input
               type="submit"
-              value="add category"
+              value="Update category"
               className="card-footer bg-sky-800 text-white"
             />
           </form>

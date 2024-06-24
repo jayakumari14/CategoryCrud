@@ -41,14 +41,14 @@ app.post("/api/add-categories", async (req, res) => {
 });
 
 //-------------------------Update single category-------------------
-app.post("/api/update-categories/:id", async (req, res) => {
+app.put("/api/update-categories/:id", async (req, res) => {
   try {
     const updateCategory = await userModel.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
     );
-    res.send(updateCategory);
+    res.json(updateCategory);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
