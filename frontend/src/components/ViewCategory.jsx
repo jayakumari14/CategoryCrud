@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 const ViewCategory = () => {
   const [category, setCategory] = useState([]);
   const { id } = useParams();
-  console.log("AAA", id);
 
   useEffect(() => {
     fetchCategory();
