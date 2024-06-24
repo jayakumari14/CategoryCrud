@@ -1,23 +1,25 @@
 import axios from "axios";
 import { useState } from "react";
 import "./AddCategory.css";
+import { useNavigate } from "react-router-dom";
 
 const AddCategory = () => {
   const [category, setCategory] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [categoryDescription, setDescription] = useState("");
+  const navigate = useNavigate();
 
-  const formHandler = async () => {
+  const formHandler = async (event) => {
+    event.preventDefault();
     try {
-      await axios
-        .post("http://localhost:3000/api/add-categories", {
-          categoryName,
-          categoryDescription,
-        })
-        .then((res) => setCategory(res.data))
-        .catch((error) => console.log("error in fetching data", error));
+      const res = await axios.post("http://localhost:3000/api/add-categories", {
+        categoryName,
+        categoryDescription,
+      });
+      setCategory(res.data);
+      navigate("/list-category");
     } catch (error) {
-      console.log("error");
+      console.log("Error in adding category:", error);
     }
   };
 
